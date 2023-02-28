@@ -35,7 +35,11 @@
         src = ./.;
 
         MIX_ENV = "prod";
-
+        # postBuild = ''
+        # mix do deps.loadpaths --no-deps-check, phx.digest
+        # mix phx.digest --no-deps-check
+        # mix do deps.loadpaths --no-deps-check
+        # '';
         # nix will create a "fixed output derivation" based on
         # the total package of fetched mix dependencies, identified by a hash
         # mixFodDeps = packages.fetchMixDeps {
